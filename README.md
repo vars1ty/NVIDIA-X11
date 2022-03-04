@@ -1,5 +1,5 @@
 # NVIDIA-X11
-A guide on how to make your experience with dual monitors on X11 with NVIDIA smoother
+A guide on how to make your experience with dual monitors on X11 with NVIDIA smoother with mixed refresh-rate monitors.
 ## Syncing refresh-rate
 To sync your refresh-rate to whichever monitor you want, follow these basic steps:
 1. Open `/etc/environment` inside any text-editing program you want with sudo permissions
@@ -19,3 +19,15 @@ This is required because otherwise you may experience stuttering issues when scr
 3. Save the file and restart your computer.
 ## Done
 Congrats, you went through the forest of NVIDIA + X11 Hell while Wayland and NVIDIA still struggle like most casual teenage e-relationships.
+## Bonus Tip
+If you like having `Allow Flipping` on, then follow these steps to optimize picom:
+1. Open `~/.config/picom.conf` inside any text-editing program you want
+2. Find the line where it says `backend =`, change the value to `xrender`. The end result should look like this ![image](https://user-images.githubusercontent.com/54314240/156851395-1140772e-248a-4e43-9500-64d9af0ce7c7.png)
+3. Save and exit out of the file, then preferably restart your computer so everything is fully updated.
+4. Enable `Allow Flipping`
+5. Done
+
+
+Enabling this makes your FPS in several games increase by a fair bit, while also allowing you to have smooth scrolling just like if it was off.
+
+Without setting the backend to xrender and keeping `Allow Flipping` on, scrolling will most likely become extremely laggy for you and you may also notice slight FPS decreases inside games and other applications (use glxgears as an example to measure the gains and losses).
