@@ -1,7 +1,7 @@
 # NVIDIA-X11
 A guide on how to make your experience with dual monitors on X11 with NVIDIA smoother
 ## Syncing refresh-rate
-To synd your refresh-rate to whichever monitor you want, follow these basic steps:
+To sync your refresh-rate to whichever monitor you want, follow these basic steps:
 1. Open `/etc/environment` inside any text-editing program you want with sudo permissions
 2. Add these flags to the end of the file:
    - `CLUTTER_DEFAULT_FPS=YOUR_REFRESH_RATE`
